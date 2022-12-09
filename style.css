@@ -48,6 +48,7 @@ main {
   grid-template-areas:
     "featuredNew featuredNew newSidebar"
     "newsBottom newsBottom newsBottom";
+  gap: 24px;
 }
 
 /* Featured New */
@@ -81,8 +82,39 @@ section#featured-new h1 {
   margin-top: 16px;
 }
 
+/* SideBar News */
 section#news-sidebar {
   grid-area: newSidebar;
+  background-color: var(--very-dark);
+  color: var(--off-white);
+  padding: 16px;
+}
+
+#news-sidebar .new-item:not(:last-child) {
+  border-bottom: 1px solid #999;
+  padding-bottom: 16px;
+}
+
+#news-sidebar .new-item:not(:nth-child(2)) {
+  padding-top: 16px;
+}
+
+#news-sidebar h2 {
+  color: var(--soft-orange);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+#news-sidebar h4 {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+#news-sidebar p {
+  color: var(--grayish-blue);
+  margin-bottom: 12px;
 }
 
 section#news-buttom {

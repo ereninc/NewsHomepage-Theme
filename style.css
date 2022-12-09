@@ -1,0 +1,90 @@
+/* Variables */
+:root {
+  --soft-orange: hsl(35, 77%, 62%);
+  --soft-red: hsl(5, 85%, 63%);
+
+  --off-white: hsl(36, 100%, 99%);
+  --grayish-blue: hsl(233, 8%, 79%);
+  --dark-grayish-blue: hsl(236, 13%, 42%);
+  --very-dark: hsl(240, 100%, 5%);
+}
+
+/* Containers */
+body {
+  background-color: var(--off-white);
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.container {
+  margin-top: 72px;
+  max-width: 1024px;
+  width: 96%; /*This gives empty space even in mobile*/
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header nav {
+  display: flex;
+  gap: 36px;
+}
+
+header nav a {
+  color: var(--dark-grayish-blue);
+}
+
+/* Main */
+main {
+  margin-top: 72px;
+  display: grid;
+  grid-template-areas:
+    "featuredNew featuredNew newSidebar"
+    "newsBottom newsBottom newsBottom";
+}
+
+/* Featured New */
+section#featured-new {
+  grid-area: featuredNew;
+}
+
+section#featured-new h1 {
+  line-height: 1;
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--very-dark);
+}
+
+.featured-new-body {
+  display: flex;
+  margin-top: 24px;
+}
+
+.featured-new-description p {
+  color: var(--dark-grayish-blue);
+}
+
+.featured-new-description button {
+  padding: 12px 24px;
+  background-color: var(--soft-red);
+  color: var(--off-white);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.75px;
+  margin-top: 16px;
+}
+
+section#news-sidebar {
+  grid-area: newSidebar;
+}
+
+section#news-buttom {
+  grid-area: newsBottom;
+}

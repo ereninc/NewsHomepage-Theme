@@ -45,27 +45,28 @@ header nav a {
 main {
   margin-top: 72px;
   display: grid;
-  grid-template-areas:
-    "featuredNew featuredNew newSidebar"
-    "newsBottom newsBottom newsBottom";
   gap: 24px;
 }
 
 /* Featured New */
-section#featured-new {
-  grid-area: featuredNew;
-}
+/* section#featured-new {
+} */
 
 section#featured-new h1 {
   line-height: 1;
-  font-size: 36px;
+  font-size: 48px;
+  width: 12ch;
   font-weight: 800;
   color: var(--very-dark);
+  flex: 1;
 }
 
 .featured-new-body {
-  display: flex;
   margin-top: 24px;
+}
+
+.featured-new-description {
+  flex: 1;
 }
 
 .featured-new-description p {
@@ -84,7 +85,6 @@ section#featured-new h1 {
 
 /* SideBar News */
 section#news-sidebar {
-  grid-area: newSidebar;
   background-color: var(--very-dark);
   color: var(--off-white);
   padding: 16px;
@@ -117,6 +117,86 @@ section#news-sidebar {
   margin-bottom: 12px;
 }
 
+/* News Bottom */
 section#news-buttom {
-  grid-area: newsBottom;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* #news-bottom > * { */
+/*news-bottom altındaki 1.seviye bütün elemanlar*/
+/* flex: 1; */
+/* } */
+
+#news-buttom .bottom-new-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bottom-new-item .bottom-image {
+  width: 100%;
+}
+
+.bottom-new-item h3 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--grayish-blue);
+}
+
+.bottom-new-item h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--very-dark);
+}
+
+.bottom-new-item p {
+  font-size: 16px;
+  color: var(--grayish-blue);
+}
+
+/*Width:min-width'den büyük ise grid layout'a yerleştir değilse default -> bu sayede responsive*/
+@media (min-width: 880px) {
+  main {
+    grid-template-areas:
+      "featuredNew featuredNew newSidebar"
+      "newsBottom newsBottom newsBottom";
+  }
+
+  #featured-new {
+    grid-area: featuredNew;
+  }
+
+  section#news-sidebar {
+    grid-area: newSidebar;
+  }
+
+  section#news-buttom {
+    grid-area: newsBottom;
+  }
+
+  .featured-new-body {
+    display: flex;
+  }
+}
+
+@media (max-width: 880px) {
+  .featured-new-body .featured-new-description {
+    margin-top: 12px;
+  }
+
+  section#news-buttom {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .bottom-image {
+    flex: 1;
+  }
+
+  .bottom-new-content {
+    flex: 2;
+  }
 }

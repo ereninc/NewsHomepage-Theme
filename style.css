@@ -166,7 +166,7 @@ section#news-buttom {
 }
 
 /*Width:min-width'den büyük ise grid layout'a yerleştir değilse default -> bu sayede responsive*/
-@media (min-width: 720px) {
+@media (min-width: 1000px) {
   main {
     grid-template-areas:
       "featuredNew featuredNew newSidebar"
@@ -190,7 +190,7 @@ section#news-buttom {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1000px) {
   .featured-new-body .featured-new-description {
     margin-top: 12px;
   }

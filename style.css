@@ -257,7 +257,7 @@ section#news-buttom {
     bottom: 0;
     right: 0;
     left: 100%;
-    transition: left 200ms ease;
+    transition: left 200ms ease, opacity 200ms ease;
   }
 
   .open {
